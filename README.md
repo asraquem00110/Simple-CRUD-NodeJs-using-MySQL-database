@@ -7,7 +7,7 @@ npm install express body-parser cookie-parser ejs express-flash express-myconnec
 
 # import database in database/simpleblog.sql
 
-run node app.js
+run node app.js <br/>
 http://localhost:3000
 
 # Login credentials
