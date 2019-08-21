@@ -1,0 +1,44 @@
+
+
+<%- include layouts/header.ejs %>
+
+
+<div class="col-md-12" style="padding:50px;">
+		<div class="container">
+		  <h1>Create Post</h1>
+		  <div class="card">
+		    <div class="card-header bg-primary bg-dark">&nbsp;</div>
+		   
+		    <div class="card-body">
+		    <form action="/blog/create" method="post" enctype="multipart/form-data">
+
+		    <div class="form-group">
+		    	<label for="">Title:</label>
+		    	<input type="text" class="form-control" name="blogtitle"/>
+		    </div>
+
+
+		    <div class="form-group">
+		    	<label for="">Body:</label>
+		    	<textarea class="form-control" name="blogbody"></textarea>
+		    </div>
+
+		     <div class="form-group">
+				    <label for="filetoupload">Image:</label>
+				    <input type="file" class="form-control" name="filetoupload" accept=".png,.jpg" required>
+		      </div>
+
+		      		<a href="/admin/dashboard"><button type="button" class="btn btn-outline-dark">CLOSE</button></a>
+					
+					<input class="btn btn-outline-dark" value="CREATE" style="float:right" type="submit">
+			</form>
+
+		    </div> 
+		  
+		  </div>
+		</div>
+	</div>
+
+
+
+<%- include layouts/footer.ejs %>

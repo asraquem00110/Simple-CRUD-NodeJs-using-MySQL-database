@@ -1,0 +1,48 @@
+
+
+<%- include layouts/header.ejs %>
+
+
+<div class="col-md-12" style="padding:50px;">
+		<div class="container">
+		  <h1>Edit Post</h1>
+		  <div class="card">
+		    <div class="card-header bg-primary bg-dark">&nbsp;</div>
+		   
+		    <div class="card-body">
+		     <img class="card-img-top" style="height: 400px;width:80%;padding-left: 20%" src="/public/images/<%- blog[0].img %>" alt="">
+		    <form action="/blog/update" method="post" enctype="multipart/form-data">
+
+		    <input type="hidden" name="blogidno" value="<%- blog[0].idno %>">
+		    <input type="hidden" name="blogoldimg" value="<%- blog[0].img %>">
+
+		    <div class="form-group">
+		    	<label for="">Title:</label>
+		    	<input type="text" class="form-control" name="blogtitle" value="<%- blog[0].title%>"/>
+		    </div>
+
+
+		    <div class="form-group">
+		    	<label for="">Body:</label>
+		    	<textarea class="form-control" name="blogbody"><%- blog[0].body %></textarea>
+		    </div>
+
+		     <div class="form-group">
+				    <label for="filetoupload">Change Image:</label>
+				    <input type="file" class="form-control" name="filetoupload" accept=".png,.jpg">
+		      </div>
+
+		      		<a href="/admin/dashboard"><button type="button" class="btn btn-outline-dark">CLOSE</button></a>
+					
+					<input class="btn btn-outline-dark" value="UPDATE" style="float:right" type="submit">
+			</form>
+
+		    </div> 
+		  
+		  </div>
+		</div>
+	</div>
+
+
+
+<%- include layouts/footer.ejs %>

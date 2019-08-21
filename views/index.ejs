@@ -1,0 +1,50 @@
+
+
+<%- include layouts/header.ejs %>  
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+      <h1 class="display-3">Simple Blog Crud</h1>
+      <p class="lead">Using Bootstrap,NodeJs and Mysql.</p>
+    </header>
+
+    <!-- Page Features -->
+    <div class="row text-center">
+
+            <% for(blog of blogs) {%>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                      <div class="card h-100">
+                        <img style="max-height: 150px;" class="card-img-top" src="/public/images/<%- blog.img %>" alt="">
+                        <div class="card-body">
+                          <h4 class="card-title"><%- blog.title %></h4>
+                          <%
+                            if(blog.body.length > 300){
+                              var blogbody = `${blog.body.substr(0,300)} .....`
+                            }else{
+                              var blogbody = blog.body
+                            }
+
+                          %>
+                          <p class="card-text"><%- blogbody %></p>
+                        </div>
+                        <div class="card-footer">
+                          <a href="blog/<%- blog.idno%>" class="btn btn-primary btn-block">View</a>
+                        </div>
+                      </div>
+                    </div>
+              <% } %>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+
+
+
+
+<%- include layouts/footer.ejs %>
